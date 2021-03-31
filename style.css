@@ -18,14 +18,13 @@ td, th {
 
 
 body{
-    background-image: url("");
+    /*background-image: url("");*/
     font-family: 'Oswald', sans-serif;
     background-size: auto;
     /*background-color: #FCA73F;*/
-    background: linear-gradient(to top, #E6712E, #FCA73F);
+    background: linear-gradient(to top, #E6712E, #D69907);
 }
 
-}
 
 header {
 }
@@ -44,13 +43,15 @@ h1 {
 }
 .imgheader {
     width: 100vw;
-    position:center;
+
 }
 h5 {
     font-size: 20px;
 }
 p {
     font-size: 18px;
+    font-weight: 200;
+
 }
 header{
     color: white;
@@ -59,6 +60,7 @@ header{
 .card {
     -webkit-box-shadow: 3px 3px 2px -1px rgba(158,158,158,0.95);
     box-shadow: 3px 3px 2px -1px rgba(158,158,158,0.95);
+    opacity: .8;
 }
 
 
@@ -67,8 +69,13 @@ header{
 
 
 @media screen and (min-width: 576px) {
-    p {font-size:12px;
-    } /*1rem = 16px*/
+    h5 {
+        font-size: 28px;
+    }
+    p {
+        font-size: 20px;
+        color: #0d6efd;;
+    }
 
     .coffee {
         word-wrap: break-word;

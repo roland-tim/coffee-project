@@ -46,7 +46,7 @@ function clearRefresh(e){
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee col-12 col-sm-4 d-flex">';
-    html += '<h5 class="mx-2 d-flex align-content-center">' + coffee.name + '</h5>';
+    html += '<h5 class="mx-2 ">' + coffee.name + '</h5>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
     return html;
