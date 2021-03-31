@@ -4,16 +4,16 @@ function coffeSelection() {
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     if (selectedRoast === 'all') {
-       filteredCoffees = coffees;
-   } else {
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-        }
-    });
-   }
-   filteredCoffees.sort(function (b,a){
-       return a.id - b.id;
+        filteredCoffees = coffees;
+    } else {
+        coffees.forEach(function(coffee) {
+            if (coffee.roast === selectedRoast) {
+                filteredCoffees.push(coffee);
+            }
+        });
+    }
+    filteredCoffees.sort(function (b,a){
+        return a.id - b.id;
     });
     menu.innerHTML = renderCoffees(filteredCoffees);
 }
@@ -25,7 +25,7 @@ function autoType(){
     }else {
         for(var i = 0; i < coffees.length; i++) {
             if(coffees[i].name.toUpperCase().includes(coffeeSearch.value.toUpperCase())){
-            // if((coffees[i].name[0]).toLowerCase() === (coffeeSearch.value[0]).toLowerCase()){
+                // if((coffees[i].name[0]).toLowerCase() === (coffeeSearch.value[0]).toLowerCase()){
                 filteredCoffees.push(coffees[i]);
             }
         }
@@ -35,10 +35,14 @@ function autoType(){
     });
     menu.innerHTML = renderCoffees(filteredCoffees);
 }
- // function clearRefresh(){
- //    localStorage.clear();
- //    location.reload();
- // }
+
+
+function clearRefresh(e){
+    e.preventDefault();
+    localStorage.clear();
+    location.reload();
+}
+
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee col-12 col-sm-4 d-flex">';
@@ -93,7 +97,7 @@ if (localStorage.length === 0){
     ];
 }
 else {
- coffees = JSON.parse(localStorage.getItem("coffees"));
+    coffees = JSON.parse(localStorage.getItem("coffees"));
 }
 var id = coffees.length;
 
@@ -106,9 +110,11 @@ var coffeeSearch = document.querySelector('#searchCoffee');
 var roastSelection2 = document.querySelector('#roast-selection2');
 var extraCoffee = document.querySelector('#addCoffee');
 var submitButton = document.querySelector('#submit');
+var clearbtn = document.querySelector('#clear')
 
 menu.innerHTML = renderCoffees(coffees);
 
 roastSelection.addEventListener("change", coffeSelection);
 coffeeSearch.addEventListener('input', autoType);
 submitButton.addEventListener('click', updateCoffees);
+clearbtn.addEventListener('click', clearRefresh);
