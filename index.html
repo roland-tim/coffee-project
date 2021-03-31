@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="mx-3">
-<header class="text-center">
+<header class="text-center d-flex flex-column justify-content-center align-items-center">
     <img src="imageedit_2_4713469980.jpg" class="imgheader">
     <h1>Chemistry Coffee!<span class="oi oi-beaker"></span></h1>
     <hr>
@@ -31,6 +31,7 @@
         <!--**************  COFFEE SELECTION **************-->
         <div class="col-6 d-flex justify-content-start flex-column">
             <div class="card p-2">
+                <h5 class="text-center">Search for Coffee</h5>
                 <form class="mb-2">
                     <label for="roast-selection" class="form-label">Roast</label>
                     <select class="custom-select form-control custom-select-lg mb-3" id="roast-selection">
@@ -43,7 +44,7 @@
                         <label for="searchCoffee" class="form-label">Coffee Name</label>
                         <input type="text" class="form-control" id="searchCoffee">
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+<!--                    <button type="submit" class="btn btn-primary w-100">Submit</button>-->
                 </form>
                 <hr>
                 <!--********** ADDING COFFEES  *************-->
@@ -62,9 +63,9 @@
                         <label for="addCoffee" class="form-label">Coffee Name</label>
                         <input type="text" class="form-control" id="addCoffee">
                     </div>
-                    <button type="submit" id="submit" class="btn btn-primary w-100">Submit</button>
+                    <button type="submit" id="submit" class="btn btn-primary w-100">Add Coffee</button>
 
-                    <button type="submit" id="clear" class="btn btn-primary btn-clear w-100" >Clear</button>
+                    <button type="submit" id="clear" class="btn btn-primary btn-clear w-100" >Clear Added Coffees</button>
                 </form>
             </div>
         </div>
